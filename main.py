@@ -1,22 +1,22 @@
 from equation import Equation
 from time import sleep
-
+from Print_color import print_Color
 
 def run_balance():
     """
     Runs the chemical equation balance algorithm
     """
-    print('=================================================')
-    print('Insert chemical equation with elements in\nparentheses followed by the number of atoms:')
-    print('Example: (H)2 + (O)2 = (H)2(O)1')
-    user_input = input('>>> ')
+    print_Color('Insert chemical equation with elements in\nparentheses followed by the number of atoms:', ['yellow'])
+    print_Color('~*Example: ~*(H)2 ~*+ ~*(O)2~* = ~*(H)2(O)1', ['cyan', 'magenta', 'yellow', 'magenta', 'yellow', 'magenta'], advanced_mode=True)
+    print_Color('>>> ', ['green'], print_END='') 
+    user_input = input('')
     try:
         equation = Equation(user_input)
-        print('Balanced equation: ' + equation.balance()) # made by artinnavidgoli
+        print_Color('Balanced equation: ' + equation.balance(), ['yellow', 'green'], advanced_mode=True) # made by artinnavidgoli
         sleep(3)
         run_balance()
     except IndexError:
-        print('Invalid input...')
+        print_Color('Invalid input...', ['red'])
         sleep(3)
         run_balance()
 
