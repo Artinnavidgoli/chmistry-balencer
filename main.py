@@ -12,7 +12,7 @@ def run_balance():
     user_input = input('')
     try:
         equation = Equation(user_input)
-        print_Color('Balanced equation: ' + equation.balance(), ['yellow', 'green'], advanced_mode=True) # made by artinnavidgoli
+        print_Color('~*Balanced equation: ~*' + equation.balance(), ['yellow', 'green'], advanced_mode=True) # made by artinnavidgoli
         sleep(3)
         run_balance()
     except IndexError:
